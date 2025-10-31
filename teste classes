@@ -1,0 +1,295 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyP2Umn8tXnAIJlWZmFP5FIt",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/henriquepetiz/teste01/blob/main/teste%20classes\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 4,
+      "metadata": {
+        "id": "rp4aIchTwGHE"
+      },
+      "outputs": [],
+      "source": [
+        "class Employee:\n",
+        "  pass"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "type(Employee)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "QVybADPqxDNY",
+        "outputId": "61dd4a33-808f-4ba0-920f-ed6e54499ce8"
+      },
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "type"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 5
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "joao = Employee()"
+      ],
+      "metadata": {
+        "id": "BiXGhigVx97K"
+      },
+      "execution_count": 6,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "type(joao)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Or94dyreyE8Q",
+        "outputId": "44bed592-165b-40fd-9ff3-4a8cff4af383"
+      },
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "__main__.Employee"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 7
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "dir(joao)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Znpbqhk0ygRz",
+        "outputId": "a5386a6b-8b8a-45ab-e231-8056b0053312"
+      },
+      "execution_count": 8,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "['__class__',\n",
+              " '__delattr__',\n",
+              " '__dict__',\n",
+              " '__dir__',\n",
+              " '__doc__',\n",
+              " '__eq__',\n",
+              " '__format__',\n",
+              " '__ge__',\n",
+              " '__getattribute__',\n",
+              " '__getstate__',\n",
+              " '__gt__',\n",
+              " '__hash__',\n",
+              " '__init__',\n",
+              " '__init_subclass__',\n",
+              " '__le__',\n",
+              " '__lt__',\n",
+              " '__module__',\n",
+              " '__ne__',\n",
+              " '__new__',\n",
+              " '__reduce__',\n",
+              " '__reduce_ex__',\n",
+              " '__repr__',\n",
+              " '__setattr__',\n",
+              " '__sizeof__',\n",
+              " '__str__',\n",
+              " '__subclasshook__',\n",
+              " '__weakref__']"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 8
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class Employee:\n",
+        "  def __init__(self, name, salary):\n",
+        "    self.name = name\n",
+        "    self.salary = salary\n",
+        "  def __str__(self):\n",
+        "    return self.name + ' recebe ' + str(self.salary)\n",
+        "  def proporcional(self, days):\n",
+        "    return self.salary / 30 * days"
+      ],
+      "metadata": {
+        "id": "_GQoduLryksr"
+      },
+      "execution_count": 22,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "joao = Employee ('Joao Grilho', 7500)"
+      ],
+      "metadata": {
+        "id": "4NRlp4hd0DUY"
+      },
+      "execution_count": 23,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "str(joao)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 35
+        },
+        "id": "tSmSwrqp0UbL",
+        "outputId": "e3b7cbe4-3398-4886-e907-712d61600c58"
+      },
+      "execution_count": 24,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "'Joao Grilho recebe 7500'"
+            ],
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            }
+          },
+          "metadata": {},
+          "execution_count": 24
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "joao.proporcional (10)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "lZJYVtDT3JEK",
+        "outputId": "e6f12977-65f6-4ebf-afa6-0dafd7727904"
+      },
+      "execution_count": 25,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "2500.0"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 25
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "dir(Employee)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "4mlvgfSf3vB1",
+        "outputId": "3663ff54-8b26-478c-be34-636509b27ce7"
+      },
+      "execution_count": 26,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "['__class__',\n",
+              " '__delattr__',\n",
+              " '__dict__',\n",
+              " '__dir__',\n",
+              " '__doc__',\n",
+              " '__eq__',\n",
+              " '__format__',\n",
+              " '__ge__',\n",
+              " '__getattribute__',\n",
+              " '__getstate__',\n",
+              " '__gt__',\n",
+              " '__hash__',\n",
+              " '__init__',\n",
+              " '__init_subclass__',\n",
+              " '__le__',\n",
+              " '__lt__',\n",
+              " '__module__',\n",
+              " '__ne__',\n",
+              " '__new__',\n",
+              " '__reduce__',\n",
+              " '__reduce_ex__',\n",
+              " '__repr__',\n",
+              " '__setattr__',\n",
+              " '__sizeof__',\n",
+              " '__str__',\n",
+              " '__subclasshook__',\n",
+              " '__weakref__',\n",
+              " 'proporcional']"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 26
+        }
+      ]
+    }
+  ]
+}
