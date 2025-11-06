@@ -1,0 +1,138 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOCl9F874fATSNv9uzVrs1E",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/henriquepetiz/teste01/blob/main/testes\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "HEz3JVTYg4Pg",
+        "outputId": "9d8ad9cd-c081-498d-e697-26d545b62ac4"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "INIT\n",
+            "INIT\n",
+            "ADD\n",
+            "INIT\n",
+            "STR\n",
+            "(4, 6)\n"
+          ]
+        }
+      ],
+      "source": [
+        "class Point:\n",
+        "  def __init__(self, x, y):\n",
+        "    print(\"INIT\")\n",
+        "    self.x = x\n",
+        "    self.y = y\n",
+        "  def __add__(self, other):\n",
+        "    print(\"ADD\")\n",
+        "    return Point(self.x + other.x, self.y + other.y)\n",
+        "  def __eq__(self, other):\n",
+        "    print(\"EQ\")\n",
+        "    return self.x == other.x and self.y == other.y\n",
+        "  def __str__(self):\n",
+        "    print(\"STR\")\n",
+        "    return f\"({self.x}, {self.y})\"\n",
+        "\n",
+        "p1 = Point(1, 2)\n",
+        "p2 = Point(3, 4)\n",
+        "\n",
+        "p3 = p1 + p2\n",
+        "print(p3)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "p = Point(3, 4)\n",
+        "p == p2"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "IxkCYI_xnjtF",
+        "outputId": "5ed4e158-c657-46e3-cc43-98ac47be0f0b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "INIT\n",
+            "EQ\n"
+          ]
+        },
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "True"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 13
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "p is p2"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "3TjOWWXpn8Fw",
+        "outputId": "642f3bdf-e45e-473b-ee72-1e7cd8d9c739"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "False"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 14
+        }
+      ]
+    }
+  ]
+}
